@@ -1,7 +1,26 @@
+
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'my-app',
-  template: `<h1>Hello {{name}}</h1>`,
+  moduleId:module.id,
+  selector: 'bookstore-app', //ce qui est placé dans index.html
+  templateUrl:'app.component.html',
+  /*
+  template: ` <!-- ce qui apparait en premier sur la page -->
+  <h1>{{title}}</h1>
+  <div>{{sousTitre}}</div>
+  <bs-welcome></bs-welcome> <!-- affiche welcome.component.ts ( c'est son selector )-->
+  `,
+  */
 })
-export class AppComponent  { name = 'Angular'; }
+
+
+export class AppComponent  {
+  title : string = "Bienvenue sur la librairie";
+  sousTitre = 'App Component test';
+
+  showBook():void{
+
+  }
+
+}
