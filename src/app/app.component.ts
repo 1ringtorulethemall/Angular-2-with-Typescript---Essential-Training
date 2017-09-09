@@ -19,6 +19,8 @@ export class AppComponent  {
   title : string = "Bienvenue sur la librairie";
   sousTitre = 'App Component test';
 
+  searchBox : string = "";
+  
   showBook():void{
 
   }
