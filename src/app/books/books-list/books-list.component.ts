@@ -1,7 +1,8 @@
-import{Component} from '@angular/core';
+import{Component, OnInit, OnChanges} from '@angular/core';
 
+//section 10
+//import {IBook} from '../books';
 
-import {IBook} from '../books';
 /*interface externalisée
 interface IBook { // interface
   bookTitle:string;
@@ -24,13 +25,26 @@ templateUrl:'books-list.component.html'
 
 })
 
-export class BooksListComponent{
+export class BooksListComponent implements OnInit, OnChanges{
+
   imageWidth:number=120;
   showImage : boolean = true;
   booksInStock : number =2;
 
+  ngOnInit(){
+    console.log('c est l initialisatione et this.booksInStock=',this.booksInStock);
+  };
+  ngOnChanges(){
+    console.log('nouveaux changements détectés')
+  };
+changeMethod():void{
+  this.animals=['chien','chat'];
+  console.log('changeMethod() appellée et this.animals =', this.animals);
+};
+animals: string[]=['zèbre', 'tortue'];
 
-  books: IBook[]=[{
+//  books: IBook[]=[{ // section10
+  books: any[]=[{
     bookTitle:"à l'époque du grand canyon", // plus de type ni de ;
     bookAuthor:"Tom Jones",
     bookPrice:29.95,
@@ -50,7 +64,7 @@ export class BooksListComponent{
     inStock:"yes",
     bookReviews: 15,
     bookImageUrl: "app/assets/images/baloons.jpg",
-    hardcover: true;
+    hardcover: true
   }
   ]
 

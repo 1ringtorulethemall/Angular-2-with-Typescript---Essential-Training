@@ -12,6 +12,7 @@
               <div [ngClass]="{'redClass':showImage,'yellowClass':!showImage}">ngClass Test</div>
               <div class="caption">
                 <button class="btn btn-primary" (click)='toggleImage()'>{{ showImage ? 'Hide Image' : 'Show Image'}}</button>
+                <button class="btn btn-warning" (click)='changeMethod()'>click pour debug.log</button>
                 <h4 class="pull-right">
                 <!--  {{book.bookPrice}} -->
                 {{book.bookPrice | currency:'USD': true}} <!-- faux par défaut donc on met à true -->
