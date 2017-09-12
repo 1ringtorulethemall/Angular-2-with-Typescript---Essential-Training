@@ -3,7 +3,7 @@ import { Component } from '@angular/core';
 
 @Component({
   moduleId:module.id,
-  selector: 'bookstore-app', //ce qui est placé dans index.html
+  selector: 'bookstore-app', //=directive, ce qui est placé dans index.html
   templateUrl:'app.component.html',
   /*
   template: ` <!-- ce qui apparait en premier sur la page -->
@@ -20,7 +20,7 @@ export class AppComponent  {
   sousTitre = 'App Component test';
 
   searchBox : string = "";
-  
+
   showBook():void{
 
   }

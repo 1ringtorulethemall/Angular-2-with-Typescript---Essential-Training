@@ -1,26 +1,29 @@
 <div class="container">
         <section id="products">
         <div class="row">
-          <div class="col-md-4">
+          <div class="col-md-4"
+            *ngFor="let book of books">
             <div class="thumbnail">
-              <img [src]="bookImageUrl"
+              <img [src]="book.bookImageUrl"
               [style.width.px]="imageWidth"
               *ngIf='showImage'>
               <!-- pour ce databinding, [src] et pas de {{}}
               [style.width.px]="imageWidth" optionnel-->
+              <div [ngClass]="{'redClass':showImage,'yellowClass':!showImage}">ngClass Test</div>
               <div class="caption">
                 <button class="btn btn-primary" (click)='toggleImage()'>{{ showImage ? 'Hide Image' : 'Show Image'}}</button>
-                
                 <h4 class="pull-right">
-                  {{bookPrice}}
+                  {{book.bookPrice}}
                 </h4>
-                <h4><a href="product.html">{{bookTitle}}</a></h4>
-                <p><b>Author: </b>{{bookAuthor}}</p>
+                <h4><a href="product.html">{{book.bookTitle}}</a></h4>
+                <p><b>Author: </b>{{book.bookAuthor}}</p>
                     <span class="glyphicon glyphicon-star"></span>
                     <span class="glyphicon glyphicon-star"></span>
                     <span class="glyphicon glyphicon-star"></span>
                     <span class="glyphicon glyphicon-star-empty"></span>
-                  <p class="pull-right">{{bookReviews}} Reviews</p>
+                    <p class="pull-right">{{book.bookReviews}} Reviews</p>
+                    <div class="clearfix"></div>
+                    <p class="text-success" *ngIf="booksInStock>0">Nombre en stock : {{booksInStock}}</p>
                 </div>
               </div>
             </div>
