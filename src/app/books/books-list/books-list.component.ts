@@ -1,5 +1,21 @@
 import{Component} from '@angular/core';
 
+
+import {IBook} from '../books';
+/*interface externalisée
+interface IBook { // interface
+  bookTitle:string;
+  bookAuthor:string;
+  bookPrice:number;
+  bookDescription:string;
+  publishedOn : Date;
+  inStock:string;
+  bookReviews: number;
+  bookImageUrl: string;
+  hardcover?: boolean; // propriété optionnelle, pas d'erreur si pas de valeur
+}
+*/
+
 @Component({
 moduleId:module.id,
 selector : 'bs-books-list',
@@ -14,6 +30,32 @@ export class BooksListComponent{
   booksInStock : number =2;
 
 
+  books: IBook[]=[{
+    bookTitle:"à l'époque du grand canyon", // plus de type ni de ;
+    bookAuthor:"Tom Jones",
+    bookPrice:29.95,
+    bookDescription:"Book of historical fiction eeee",
+    publishedOn : new Date('02/11/1921'),
+    inStock:"yes",
+    bookReviews: 15,
+    bookImageUrl: "app/assets/images/baloons.jpg",
+    hardcover:false
+  },
+  {
+    bookTitle:"Les fourmis", // plus de type ni de ;
+    bookAuthor:"Tom Jones",
+    bookPrice:29.95,
+    bookDescription:"fourmis",
+    publishedOn : new Date('02/11/1921'),
+    inStock:"yes",
+    bookReviews: 15,
+    bookImageUrl: "app/assets/images/baloons.jpg",
+    hardcover: true;
+  }
+  ]
+
+
+/* avant interface
   books: any[]=[{
     bookTitle:"à l'époque du grand canyon", // plus de type ni de ;
     bookAuthor:"Tom Jones",
@@ -35,6 +77,7 @@ export class BooksListComponent{
     bookImageUrl: "app/assets/images/baloons.jpg",
   }
 ]
+*/
 
   //tableau d'objets
   /* mis entre crochets pour section8 pipes
