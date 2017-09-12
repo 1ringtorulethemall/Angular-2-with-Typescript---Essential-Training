@@ -8,11 +8,13 @@ import {HighlightDirective} from './shared/highlight.directive';
 //aa //import { WelcomeComponent} from'./welcome/welcome.component';
 import {BooksListComponent} from './books/books-list/books-list.component';
 
+import{TruncatePipe} from './shared/pipes/truncate.pipe';
+
 
 @NgModule({ // @NgModule= le décorateur, cad fonction qui ajoute des métadatas à la classe AppModule. Toutes ces métadatas sont passées à la classe AppModule
   imports:      [ BrowserModule, FormsModule ],
   //aa //declarations: [ AppComponent, WelcomeComponent ],// contient les components, directives et pipes
-  declarations: [ AppComponent, BooksListComponent, HighlightDirective ],// contient les components, directives et pipes
+  declarations: [ AppComponent, BooksListComponent, HighlightDirective, TruncatePipe ],// contient les components, directives et pipes
   bootstrap:    [ AppComponent ] // précise quel est le composant du root
 })
 export class AppModule { }

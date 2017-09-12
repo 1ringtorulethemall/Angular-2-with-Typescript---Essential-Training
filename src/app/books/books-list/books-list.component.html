@@ -13,10 +13,16 @@
               <div class="caption">
                 <button class="btn btn-primary" (click)='toggleImage()'>{{ showImage ? 'Hide Image' : 'Show Image'}}</button>
                 <h4 class="pull-right">
-                  {{book.bookPrice}}
+                <!--  {{book.bookPrice}} -->
+                {{book.bookPrice | currency:'USD': true}} <!-- faux par défaut donc on met à true -->
                 </h4>
+
+
                 <h4><a href="product.html">{{book.bookTitle}}</a></h4>
                 <p><b>Author: </b>{{book.bookAuthor}}</p>
+                <p><b>Description: </b>{{book.bookDescription | limitChar :'8'}}</p>
+                <p><b>Publié le : </b>{{book.publishedOn | date:'longDate'}}</p>
+                <p><b>En stock : </b>{{book.inStock | uppercase}}</p>
                     <span class="glyphicon glyphicon-star"></span>
                     <span class="glyphicon glyphicon-star"></span>
                     <span class="glyphicon glyphicon-star"></span>
