@@ -7,11 +7,21 @@ templateUrl:"favorite.component.html"
 })
 
 export class FavoriteComponent{
+fave : boolean = false;
+
+  @Input() favorite : string;
+
   @Input() reviews:number;
 
-  @Output() notify: EventEmitter<string>= new EventEmitter<string>();
+  @Output() favoriteClicked: EventEmitter<string>= new EventEmitter<string>();
   onClick():void{
-    this.notify.emit('Message de l enfant');
+    this.favoriteClicked.emit(`Le favori ${this.favorite} a été enregistré`);
+    this.fave =!this.fave;
+  }
+
+  isSelected(fave:boolean):boolean{
+    if(!fave || !this.fave) {return false};
+    if(fave){return true};
   }
 
 }

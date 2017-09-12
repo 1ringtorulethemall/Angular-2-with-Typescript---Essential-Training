@@ -2,13 +2,10 @@
         <section id="products">
         <div class="row">
           <div class="container">
-            <h2>{{showMessage}}</h2>
+            <h2>{{favoriteMessage}}</h2>
           </div>
           <div class="col-md-4"
             *ngFor="let book of books">
-            <bs-favorite
-            [reviews]="book.bookReviews"
-            (notify)="onNotifyClicked($event)"></bs-favorite>
 
             <div class="thumbnail">
               <img [src]="book.bookImageUrl"
@@ -38,6 +35,10 @@
                     <p class="pull-right">{{book.bookReviews}} Reviews</p>
                     <div class="clearfix"></div>
                     <p class="text-success" *ngIf="booksInStock>0">Nombre en stock : {{booksInStock}}</p>
+                    <bs-favorite
+                    [reviews]="book.bookReviews"
+                    [favorite]="book.bookTitle"
+                    (favoriteClicked)="onFavoriteClicked($event)"></bs-favorite>
                 </div>
               </div>
             </div>

@@ -29,14 +29,15 @@ templateUrl:'books-list.component.html'
 //export class BooksListComponent implements OnInit, OnChanges{
 export class BooksListComponent {
 
+favoriteMessage: string="";
+
   imageWidth:number=120;
   showImage : boolean = true;
   booksInStock : number =2;
 
 showMessage:string='test';
-onNotifyClicked(message:string):void{
-  this.showMessage=message;
-}
+
+
 
 
 /*
@@ -68,15 +69,19 @@ animals: string[]=['zèbre', 'tortue'];
   {
     bookTitle:"Les fourmis", // plus de type ni de ;
     bookAuthor:"Tom Jones",
-    bookPrice:29.95,
+    bookPrice:19.95,
     bookDescription:"fourmis",
     publishedOn : new Date('02/11/1921'),
     inStock:"yes",
-    bookReviews: 15,
+    bookReviews: 18,
     bookImageUrl: "app/assets/images/baloons.jpg",
     hardcover: true
   }
   ]
+
+  onFavoriteClicked(message : string):void{
+    this.favoriteMessage = message;
+  }
 
 
 /* avant interface
