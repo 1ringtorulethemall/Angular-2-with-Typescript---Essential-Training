@@ -1,4 +1,5 @@
-import{Component, OnInit, OnChanges} from '@angular/core';
+//import{Component, OnInit, OnChanges} from '@angular/core';
+import{Component} from '@angular/core';
 
 //section 10
 //import {IBook} from '../books';
@@ -25,12 +26,20 @@ templateUrl:'books-list.component.html'
 
 })
 
-export class BooksListComponent implements OnInit, OnChanges{
+//export class BooksListComponent implements OnInit, OnChanges{
+export class BooksListComponent {
 
   imageWidth:number=120;
   showImage : boolean = true;
   booksInStock : number =2;
 
+showMessage:string='test';
+onNotifyClicked(message:string):void{
+  this.showMessage=message;
+}
+
+
+/*
   ngOnInit(){
     console.log('c est l initialisatione et this.booksInStock=',this.booksInStock);
   };
@@ -42,6 +51,7 @@ changeMethod():void{
   console.log('changeMethod() appellée et this.animals =', this.animals);
 };
 animals: string[]=['zèbre', 'tortue'];
+*/
 
 //  books: IBook[]=[{ // section10
   books: any[]=[{
