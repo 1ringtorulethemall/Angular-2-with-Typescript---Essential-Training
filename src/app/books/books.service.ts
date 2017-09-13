@@ -1,35 +1,31 @@
 import{Injectable} from '@angular/core';
-import{Http} from '@angular/http';
+import{Http, Response} from '@angular/http';
+import {Observable} from 'rxjs/Observable';
 import{IBook} from './books';
+import 'rxjs/add/operator/map';
+import 'rxjs/add/observable/throw';
+import 'rxjs/add/operator/do';
+import 'rxjs/add/operator/catch';
+//import 'rxjs/Rx' pas besoin d importer toute la lib, trop lourd
+
 
 @Injectable()
 export class BookService{
 
-getBooks():IBook[]{
-return[{
-  bookTitle:"à l'époque du grand canyon", // plus de type ni de ;
-  bookAuthor:"Tom Jones",
-  bookPrice:29.95,
-  bookDescription:"Book of historical fiction eeee",
-  publishedOn : new Date('02/11/1921'),
-  inStock:"yes",
-  bookReviews: 15,
-  bookImageUrl: "app/assets/images/baloons.jpg",
+constructor(private _http:Http){}
 
-},
-{
-  bookTitle:"Les fourmis", // plus de type ni de ;
-  bookAuthor:"Tom Jones",
-  bookPrice:19.95,
-  bookDescription:"fourmis",
-  publishedOn : new Date('02/11/1921'),
-  inStock:"yes",
-  bookReviews: 18,
-  bookImageUrl: "app/assets/images/baloons.jpg",
-
+getBooks():Observable<IBook[]>{
+return this._http
+.get('api/books/books.json')
+.map((response:Response)=><IBook[]>response.json())
+.do(data=>console.log(data))
+.catch(this.handleError);
 }
 
-]
+private handleError(error:Response){
+  console.error(error);
+  let message=`Error status code ${error.status} at ${error.url}`;
+  return Observable.throw(message);
 
 }
 }

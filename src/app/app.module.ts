@@ -5,6 +5,8 @@ import { AppComponent }  from './app.component'; // root component de l'applicat
 import { FormsModule} from '@angular/forms';
 import {HighlightDirective} from './shared/highlight.directive';
 
+import {HttpModule} from '@angular/http';
+
 //aa //import { WelcomeComponent} from'./welcome/welcome.component';
 import {BooksListComponent} from './books/books-list/books-list.component';
 
@@ -15,7 +17,7 @@ import{BookService} from './books/books.service';
 
 
 @NgModule({ // @NgModule= le décorateur, cad fonction qui ajoute des métadatas à la classe AppModule. Toutes ces métadatas sont passées à la classe AppModule
-  imports:      [ BrowserModule, FormsModule ],
+  imports:      [ BrowserModule, FormsModule, HttpModule ],
   //aa //declarations: [ AppComponent, WelcomeComponent ],// contient les components, directives et pipes
   declarations: [ AppComponent, BooksListComponent, HighlightDirective, TruncatePipe, FavoriteComponent ],// contient les components, directives et pipes
   bootstrap:    [ AppComponent ] ,// précise quel est le composant du root

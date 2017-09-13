@@ -1,5 +1,5 @@
 //import{Component, OnInit, OnChanges} from '@angular/core';
-import{Component} from '@angular/core';
+import{Component, OnInit} from '@angular/core';
 import {Router} from '@angular/router';
 import {IBook} from '../books';
 import {BookService}  from "../books.service";
@@ -30,20 +30,27 @@ templateUrl:'books-list.component.html'
 })
 
 //export class BooksListComponent implements OnInit, OnChanges{
-export class BooksListComponent {
+export class BooksListComponent implements OnInit{
 
-favoriteMessage: string="";
+  favoriteMessage: string="";
 
   imageWidth:number=120;
   showImage : boolean = true;
   booksInStock : number =2;
 
   showMessage:string='test';
-
+  errorMessage : string;
   books:IBook[];
-  constructor(private _bookService : BookService){
-    this.books= _bookService.getBooks();
-  }
+
+  constructor(private _bookService : BookService){}
+
+
+ngOnInit(){this.getBooks()};
+getBooks(){
+  this._bookService.getBooks().subscribe( books=>this.books=books, error=>this.errorMessage=<any>error);
+}
+
+
 
 
 /*

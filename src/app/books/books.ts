@@ -1,5 +1,5 @@
 // fichier créer pour les interfaces et charger books.json
-/*
+
 export interface IBook{ // nomenclature : utiliser I pour Interface
   id : string;
   name:string;
@@ -9,13 +9,13 @@ export interface IBook{ // nomenclature : utiliser I pour Interface
   author: string;
   genre: string;
   specifications: string;
-  inStock: string;
+  inStock: boolean;
   price: number;
   starRating: number;
   imageUrl: string;
 
-}*/
-
+}
+/*
 export interface IBook{ // nomenclature : utiliser I pour Interface
   bookTitle : string;
   bookAuthor :string;
@@ -30,3 +30,4 @@ export interface IBook{ // nomenclature : utiliser I pour Interface
   bookImageUrl: string;
 
 }
+*/
