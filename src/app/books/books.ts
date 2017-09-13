@@ -13,7 +13,6 @@ export interface IBook{ // nomenclature : utiliser I pour Interface
   price: number;
   starRating: number;
   imageUrl: string;
-
 }
 /*
 export interface IBook{ // nomenclature : utiliser I pour Interface

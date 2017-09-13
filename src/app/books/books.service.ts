@@ -18,8 +18,15 @@ getBooks():Observable<IBook[]>{
 return this._http
 .get('api/books/books.json')
 .map((response:Response)=><IBook[]>response.json())
-.do(data=>console.log(data))
+//.do(data=>console.log(data))
 .catch(this.handleError);
+}
+
+//création d'un nouveau service pour affichage détail du livre
+getBook(id:string):Observable<IBook>{
+  return this.getBooks()
+  .map((books:IBook[])=>books.find(book=>book.id===id))
+  .do(data=>console.log(data));
 }
 
 private handleError(error:Response){

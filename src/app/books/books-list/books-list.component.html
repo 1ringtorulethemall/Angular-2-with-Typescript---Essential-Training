@@ -25,7 +25,7 @@
                 <!--  {{book.bookPrice}} -->
                 {{book.price | currency:'EUR': true}} <!-- faux par défaut donc on met à true -->
                 </h4>
-                <h4><a href="product.html">{{book.name}}</a></h4>
+                <h4><a [routerLink]="['/book', book.id]">{{book.name}}</a></h4>
                 <p><b>Author: </b>{{book.author}}</p>
                 <p><b>Description: </b>{{book.description | limitChar :'8'}}</p>
                 <p><b>Publié le : </b>{{book.releaseDate | date:'longDate'}}</p>

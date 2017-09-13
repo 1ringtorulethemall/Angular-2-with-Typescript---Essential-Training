@@ -4,10 +4,10 @@
           <div class="col-md-8">
             <div class="row">
               <div class="col-md-4">
-                <img class="main-img" src="img/656.jpg">
+                <img class="main-img" src={{book?.imageUrl}}>
               </div>
               <div class="col-md-8">
-                <h2>War and Peace</h2>
+                <h2>{{book?.name}}</h2> <!-- le ? veut dire n'affiche pas tant que l'objet n'est pas obtenu-->
                 <div class="price text-success">$19.95</div>
 
                 <p>Quanity:
@@ -31,7 +31,7 @@
                   </div>
                   <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
                     <div class="panel-body">
-                      Tolstoy's epic masterpiece intertwines the lives of private and public individuals during the time of the Napoleonic wars and the French invasion of Russia. The fortunes of the Rostovs and the Bolkonskys, of Pierre, Natasha, and Andrei, are intimately connected with the national history that is played out in parallel with their lives. Balls and soirees alternate with councils of war and the machinations of statesmen and generals, scenes of violent battles with everyday human passions in a work whose extraordinary imaginative power has never been surpassed.
+                      {{book?.description}}
                     </div>
                   </div>
                 </div>
@@ -43,7 +43,7 @@
                       </a>
                     </h4>
                   </div>
-                  <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+                  <div id="collapseTwo" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingTwo">
                     <div class="panel-body">
                       Paperback, 1392 pages
                     </div>
@@ -57,7 +57,7 @@
                       </a>
                     </h4>
                   </div>
-                  <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+                  <div id="collapseThree" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingThree">
                     <div class="panel-body">
                       March 19, 1865
                     </div>
@@ -71,7 +71,7 @@
                       </a>
                     </h4>
                   </div>
-                  <div id="collapseFour" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFour">
+                  <div id="collapseFour" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingFour">
                     <div class="panel-body">
                       war
                     </div>
