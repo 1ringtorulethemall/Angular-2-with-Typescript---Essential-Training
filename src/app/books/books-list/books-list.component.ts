@@ -23,7 +23,7 @@ interface IBook { // interface
 
 @Component({
 moduleId:module.id,
-selector : 'bs-books-list',
+//selector : 'bs-books-list', // plus besoin de selecteur quand on utilise les routes
 templateUrl:'books-list.component.html'
 
 
