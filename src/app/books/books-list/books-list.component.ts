@@ -1,5 +1,8 @@
 //import{Component, OnInit, OnChanges} from '@angular/core';
 import{Component} from '@angular/core';
+import {Router} from '@angular/router';
+import {IBook} from '../books';
+import {BookService}  from "../books.service";
 
 //section 10
 //import {IBook} from '../books';
@@ -35,9 +38,12 @@ favoriteMessage: string="";
   showImage : boolean = true;
   booksInStock : number =2;
 
-showMessage:string='test';
+  showMessage:string='test';
 
-
+  books:IBook[];
+  constructor(private _bookService : BookService){
+    this.books= _bookService.getBooks();
+  }
 
 
 /*
@@ -55,6 +61,7 @@ animals: string[]=['zèbre', 'tortue'];
 */
 
 //  books: IBook[]=[{ // section10
+/*
   books: any[]=[{
     bookTitle:"à l'époque du grand canyon", // plus de type ni de ;
     bookAuthor:"Tom Jones",
@@ -78,6 +85,7 @@ animals: string[]=['zèbre', 'tortue'];
     hardcover: true
   }
   ]
+  */
 
   onFavoriteClicked(message : string):void{
     this.favoriteMessage = message;

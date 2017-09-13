@@ -11,11 +11,14 @@ import {BooksListComponent} from './books/books-list/books-list.component';
 import{TruncatePipe} from './shared/pipes/truncate.pipe';
 import{FavoriteComponent} from './favorites/favorite.component';
 
+import{BookService} from './books/books.service';
+
 
 @NgModule({ // @NgModule= le décorateur, cad fonction qui ajoute des métadatas à la classe AppModule. Toutes ces métadatas sont passées à la classe AppModule
   imports:      [ BrowserModule, FormsModule ],
   //aa //declarations: [ AppComponent, WelcomeComponent ],// contient les components, directives et pipes
   declarations: [ AppComponent, BooksListComponent, HighlightDirective, TruncatePipe, FavoriteComponent ],// contient les components, directives et pipes
-  bootstrap:    [ AppComponent ] // précise quel est le composant du root
+  bootstrap:    [ AppComponent ] ,// précise quel est le composant du root
+  providers:[BookService]
 })
 export class AppModule { }
